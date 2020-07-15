@@ -32,7 +32,7 @@ function getPathSegments(path) {
 }
 
 module.exports = {
-	get(object, path, value) {
+	get: function (object, path, value) {
 		if (!isObj(object) || typeof path !== 'string') {
 			return value === undefined ? object : value;
 		}
@@ -66,7 +66,7 @@ module.exports = {
 		return object;
 	},
 
-	set(object, path, value) {
+	set: function (object, path, value) {
 		if (!isObj(object) || typeof path !== 'string') {
 			return object;
 		}
@@ -91,7 +91,7 @@ module.exports = {
 		return root;
 	},
 
-	delete(object, path) {
+	delete: function (object, path) {
 		if (!isObj(object) || typeof path !== 'string') {
 			return;
 		}
@@ -114,7 +114,7 @@ module.exports = {
 		}
 	},
 
-	has(object, path) {
+	has: function (object, path) {
 		if (!isObj(object) || typeof path !== 'string') {
 			return false;
 		}
